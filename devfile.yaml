@@ -60,6 +60,13 @@ commands:
       group:
         kind: debug
         isDefault: true
+ - id: build-image
+  exec:
+    component: tools
+    workingDir: ${PROJECT_SOURCE}
+    commandLine: podman build -t java-maven-app:latest -f Dockerfile .
+    group:
+      kind: build       
 starterProjects:
   - name: springbootproject
     git:
